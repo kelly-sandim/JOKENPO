@@ -18,3 +18,35 @@
     align-items: center;
     justify-content: center;
 }
+
+#player, #computer
+{
+    position: relative;
+    flex-grow: 1;
+    border-radius: 5px;
+    width: 200px;
+    padding: 20px;
+    color: #fff;
+}
+
+#player
+{
+    background-color: #ff7675;
+}
+
+#computer
+{
+    background-color: #74b9ff;
+}
+
+ul#player-choice, ul#computer-choice
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul#player-choice li, ul#computer-choice li
+{
+    display: inline;
+}
