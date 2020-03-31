@@ -50,3 +50,8 @@ ul#player-choice li, ul#computer-choice li
 {
     display: inline;
 }
+
+ul#player-choice li a img, ul#computer-choice li a img
+{
+    max-width: 100px;
+}
