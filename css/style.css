@@ -52,6 +52,18 @@ ul#player-choice li, ul#computer-choice li
     display: inline;    
 }
 
+ul#player-choice li a, ul#computer-choice li a
+{
+    opacity: 0.5;
+}
+
+
+ul#player-choice li a:hover
+{
+    opacity: 1;
+}
+
+
 ul#player-choice li a img, ul#computer-choice li a img
 {
     max-width: 100px;
