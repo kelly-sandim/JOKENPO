@@ -42,13 +42,14 @@
 ul#player-choice, ul#computer-choice
 {
     list-style: none;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
 ul#player-choice li, ul#computer-choice li
 {
-    display: inline;
+    display: inline;    
 }
 
 ul#player-choice li a img, ul#computer-choice li a img
