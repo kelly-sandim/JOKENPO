@@ -39,6 +39,13 @@
     background-color: #74b9ff;
 }
 
+#versus
+{
+    font-size: 50px;
+    text-align: center;
+    width: 70px;
+}
+
 ul#player-choice, ul#computer-choice
 {
     list-style: none;
