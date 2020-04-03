@@ -1,5 +1,7 @@
 var playerChoice = 0;
+var playerPoints = 0;
 var computerChoice = 0;
+var computerPoints = 0;
 var winner = "";
 
 function play(choice)
@@ -23,17 +25,20 @@ function play(choice)
     else if((playerChoice == 1) && (computerChoice == 2))
     {
         winner = "computador";
+        computerPoints++;
     } 
 
     else if ((playerChoice == 1) && (computerChoice == 3))
     {
         winner = "jogador";
+        playerPoints++;
     } 
     
     //CASOS PAPEL
     else if((playerChoice == 2) && (computerChoice == 1))
     {
         winner = "jogador";
+        playerPoints++;
     } 
 
     else if((playerChoice == 2) && (computerChoice == 2))
@@ -44,17 +49,20 @@ function play(choice)
     else if ((playerChoice == 2) && (computerChoice == 3))
     {
         winner = "computador";
+        computerPoints++;
     }
 
     //CASOS TESOURA
     else if((playerChoice == 3) && (computerChoice == 1))
     {
         winner = "computador";
+        computerPoints++;
     } 
 
     else if((playerChoice == 3) && (computerChoice == 2))
     {
         winner = "jogador";
+        playerPoints++;
     } 
 
     else if ((playerChoice == 3) && (computerChoice == 3))
@@ -87,4 +95,7 @@ function play(choice)
     {
         document.getElementById('messages').innerHTML = 'Computador ganhou!';
     }
+
+    document.getElementById('player-points').innerHTML = playerPoints;
+    document.getElementById('computer-points').innerHTML = computerPoints;
 }
