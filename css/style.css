@@ -103,3 +103,12 @@ ul#player-choice li a img, ul#computer-choice li a img
 {
     max-width: 100px;
 }
+
+#messages
+{
+    background-color: #b2bec3;
+    font-size: 32px;
+    border-radius: 5px;
+    margin: 40px 0;
+    padding: 20px;
+}
