@@ -52,6 +52,29 @@
     padding: 0;
 }
 
+#player-id
+{
+    text-align: left;
+}
+
+#computer-id
+{
+    text-align: right;
+}
+
+#player-points, #computer-points
+{
+    position: absolute;
+    top: 8px;
+    font-size: 32px;
+}
+
+#player-points
+{
+    right: 20px;
+}
+
+
 ul#player-choice, ul#computer-choice
 {
     list-style: none;
