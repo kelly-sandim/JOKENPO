@@ -64,4 +64,19 @@ function play(choice)
 
     document.getElementById("player-choice-" + playerChoice).classList.add('selected');
     document.getElementById("computer-choice-" + computerChoice).classList.add('selected');
+
+    if(winner === "empate")
+    {
+        document.getElementById('messages').innerHTML = 'Empate!';
+    }
+
+    else if(winner === "jogador")
+    {
+        document.getElementById('messages').innerHTML = 'Jogador ganhou!';
+    }
+
+    else if(winner === "computador")
+    {
+        document.getElementById('messages').innerHTML = 'Computador ganhou!';
+    }
 }
