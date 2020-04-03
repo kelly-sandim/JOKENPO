@@ -93,8 +93,7 @@ ul#player-choice li a, ul#computer-choice li a
     opacity: 0.5;
 }
 
-
-ul#player-choice li a:hover
+ul#player-choice li a:hover, ul#player-choice li a.selected, ul#computer-choice li a.selected
 {
     opacity: 1;
 }

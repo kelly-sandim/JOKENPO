@@ -62,5 +62,6 @@ function play(choice)
         winner = "empate";
     }
 
-    alert(winner);
+    document.getElementById("player-choice-" + playerChoice).classList.add('selected');
+    document.getElementById("computer-choice-" + computerChoice).classList.add('selected');
 }
