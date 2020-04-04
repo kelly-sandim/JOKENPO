@@ -3,6 +3,17 @@ var playerPoints = 0;
 var computerChoice = 0;
 var computerPoints = 0;
 var winner = "";
+var gameType = -1;
+
+function tipoJogo(choice)
+{
+    /*choice:
+        1 - Melhor de 3
+        2 - Melhor de 5
+        3 - Melhor de 7
+    */
+   localStorage.setItem("gameType", choice);
+}
 
 function play(choice)
 {
@@ -98,4 +109,51 @@ function play(choice)
 
     document.getElementById('player-points').innerHTML = playerPoints;
     document.getElementById('computer-points').innerHTML = computerPoints;
+
+    gameType = localStorage.getItem("gameType");
+    
+    if(gameType === "1")
+    {        
+        if(playerPoints === 2 || computerPoints === 2)
+        {            
+            if(playerPoints === 2)
+            {               
+                document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+            }
+            else
+            {                
+                document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+            }
+        }
+    }
+
+    else if(gameType === "2")
+    {
+        if(playerPoints === 3 || computerPoints === 3)
+        {            
+            if(playerPoints === 3)
+            {
+                document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+            }
+            else
+            {
+                document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+            }
+        }
+    }
+
+    else if(gameType === "3")
+    {
+        if(playerPoints === 4 || computerPoints === 4)
+        {            
+            if(playerPoints === 4)
+            {
+                document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+            }
+            else
+            {
+                document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+            }
+        }
+    }
 }
