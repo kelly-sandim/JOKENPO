@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Zhi+Mang+Xing&display=swap');
+
+
 *
 {
     font-family: 'Roboto', sans-serif;
@@ -10,6 +13,11 @@
 {
     width: 150px;
     height: 150px;
+}
+
+#navbar-title
+{
+    font-family: 'Zhi Mang Xing', cursive;
 }
 
 #score
