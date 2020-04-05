@@ -15,12 +15,24 @@
 
     <title>Jo-Ken-Po!</title>
 </head>
-<body>
-    <div id="main">
-        <h1 id="title">Jo-Ken-Po!</h1>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand h1 mb-0" href="#">Jo-Ken-Po!</a> 
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav mr-auto"> 
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Acessar seu Histórico</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="main" class="ml-3 mr-3 mt-3 mb-3">     
+        <div id="messages" class="text-light">&nbsp;</div>    
         <div id="score">
             <div id="player">
-                <h2 id="player-id">Player 1</h2>
+                <h2 id="player-id">Você</h2>
                 <span id="player-points">0</span>
 
                 <ul id="player-choice">
@@ -35,7 +47,7 @@
             </div>
 
             <div id="computer">
-                <h2 id="computer-id">Computer</h2>
+                <h2 id="computer-id">Computador</h2>
                 <span id="computer-points">0</span>
 
                 <ul id="computer-choice">
@@ -44,12 +56,11 @@
                     <li><a id="computer-choice-3"><img class="jokenpo" src="../assets/images/tesoura.png" alt="Tesoura"></a></li>
                 </ul>
             </div>            
-        </div>
-        <div id="messages">&nbsp;</div>  
+        </div>         
         <div id="options">
             <a href="./index.html" id="jogar-novamente" role="button" class="btn btn-success col-12">Jogar novamente</a>
         </div>      
-    </div>
+    </main>
     
 </body>
 </html>
