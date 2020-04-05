@@ -5,6 +5,8 @@ var computerPoints = 0;
 var winner = "";
 var gameType = -1;
 
+
+
 function tipoJogo(choice)
 {
     /*choice:
@@ -133,6 +135,9 @@ function play(choice)
             document.getElementById("computer-choice-1").classList.add('disabled');
             document.getElementById("computer-choice-2").classList.add('disabled');
             document.getElementById("computer-choice-3").classList.add('disabled');
+
+            /*Fazer o botão de jogar novamente aparecer*/
+            document.getElementById("jogar-novamente").style.display = "block";
         }
     }
 
@@ -156,6 +161,9 @@ function play(choice)
             document.getElementById("computer-choice-1").classList.add('disabled');
             document.getElementById("computer-choice-2").classList.add('disabled');
             document.getElementById("computer-choice-3").classList.add('disabled');
+
+            /*Fazer o botão de jogar novamente aparecer*/
+            document.getElementById("jogar-novamente").style.display = "block";
         }
     }
 
@@ -179,6 +187,9 @@ function play(choice)
             document.getElementById("computer-choice-1").classList.add('disabled');
             document.getElementById("computer-choice-2").classList.add('disabled');
             document.getElementById("computer-choice-3").classList.add('disabled');
+
+            /*Fazer o botão de jogar novamente aparecer*/
+            document.getElementById("jogar-novamente").style.display = "block";
         }
     }
 }
