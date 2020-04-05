@@ -111,6 +111,7 @@ function play(choice)
     document.getElementById('computer-points').innerHTML = computerPoints;
 
     gameType = localStorage.getItem("gameType");
+    console.log(gameType);
     
     if(gameType === "1")
     {        
@@ -124,6 +125,14 @@ function play(choice)
             {                
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
             }
+            /* desabilitar os botões */
+            document.getElementById("player-choice-1").classList.add('disabled');
+            document.getElementById("player-choice-2").classList.add('disabled');
+            document.getElementById("player-choice-3").classList.add('disabled');
+
+            document.getElementById("computer-choice-1").classList.add('disabled');
+            document.getElementById("computer-choice-2").classList.add('disabled');
+            document.getElementById("computer-choice-3").classList.add('disabled');
         }
     }
 
@@ -139,6 +148,14 @@ function play(choice)
             {
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
             }
+            /* desabilitar os botões */
+            document.getElementById("player-choice-1").classList.add('disabled');
+            document.getElementById("player-choice-2").classList.add('disabled');
+            document.getElementById("player-choice-3").classList.add('disabled');
+
+            document.getElementById("computer-choice-1").classList.add('disabled');
+            document.getElementById("computer-choice-2").classList.add('disabled');
+            document.getElementById("computer-choice-3").classList.add('disabled');
         }
     }
 
@@ -154,6 +171,14 @@ function play(choice)
             {
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
             }
+            /* desabilitar os botões */
+            document.getElementById("player-choice-1").classList.add('disabled');
+            document.getElementById("player-choice-2").classList.add('disabled');
+            document.getElementById("player-choice-3").classList.add('disabled');
+
+            document.getElementById("computer-choice-1").classList.add('disabled');
+            document.getElementById("computer-choice-2").classList.add('disabled');
+            document.getElementById("computer-choice-3").classList.add('disabled');
         }
     }
 }

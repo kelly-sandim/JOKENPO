@@ -98,6 +98,19 @@ ul#player-choice li a:hover, ul#player-choice li a.selected, ul#computer-choice 
     opacity: 1;
 }
 
+ul#player-choice li a:hover
+{
+    cursor: pointer;
+}
+
+ul#player-choice li a.disabled, ul#computer-choice li a.disabled
+{
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+
 
 ul#player-choice li a img, ul#computer-choice li a img
 {
