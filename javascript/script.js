@@ -85,13 +85,7 @@ function play(choice)
         winner = "empate";
     }
 
-    document.getElementById("player-choice-1").classList.remove('selected');
-    document.getElementById("player-choice-2").classList.remove('selected');
-    document.getElementById("player-choice-3").classList.remove('selected');
-
-    document.getElementById("computer-choice-1").classList.remove('selected');
-    document.getElementById("computer-choice-2").classList.remove('selected');
-    document.getElementById("computer-choice-3").classList.remove('selected');
+    removeSelected();
 
     document.getElementById("player-choice-" + playerChoice).classList.add('selected');
     document.getElementById("computer-choice-" + computerChoice).classList.add('selected');
@@ -115,8 +109,7 @@ function play(choice)
     document.getElementById('computer-points').innerHTML = computerPoints;
 
     /*IMPLEMENTA AS REGRAS*/
-    gameType = localStorage.getItem("gameType");
-    console.log(gameType);   
+    gameType = localStorage.getItem("gameType");    
     
     if(gameType === "1") //Melhor de 3
     {        
@@ -131,19 +124,13 @@ function play(choice)
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
             }
             /* desabilitar os botões */
-            document.getElementById("player-choice-1").classList.add('disabled');
-            document.getElementById("player-choice-2").classList.add('disabled');
-            document.getElementById("player-choice-3").classList.add('disabled');
-
-            document.getElementById("computer-choice-1").classList.add('disabled');
-            document.getElementById("computer-choice-2").classList.add('disabled');
-            document.getElementById("computer-choice-3").classList.add('disabled');
+            disableButtons();
 
             /*Fazer o botão de jogar novamente aparecer*/
-            document.getElementById("jogar-novamente").style.display = "block";
+            blockPlayAgain();
 
             /*Fazer o botão desistir desaparecer*/
-            document.getElementById("desistir").style.display = "none";
+            giveUpDisappear();
         }
     }
 
@@ -160,19 +147,13 @@ function play(choice)
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
             }
             /* desabilitar os botões */
-            document.getElementById("player-choice-1").classList.add('disabled');
-            document.getElementById("player-choice-2").classList.add('disabled');
-            document.getElementById("player-choice-3").classList.add('disabled');
-
-            document.getElementById("computer-choice-1").classList.add('disabled');
-            document.getElementById("computer-choice-2").classList.add('disabled');
-            document.getElementById("computer-choice-3").classList.add('disabled');
+            disableButtons();
 
             /*Fazer o botão de jogar novamente aparecer*/
-            document.getElementById("jogar-novamente").style.display = "block";
+            blockPlayAgain();
 
             /*Fazer o botão desistir desaparecer*/
-            document.getElementById("desistir").style.display = "none";
+            giveUpDisappear();
         }
     }
 
@@ -189,19 +170,13 @@ function play(choice)
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
             }
             /* desabilitar os botões */
-            document.getElementById("player-choice-1").classList.add('disabled');
-            document.getElementById("player-choice-2").classList.add('disabled');
-            document.getElementById("player-choice-3").classList.add('disabled');
-
-            document.getElementById("computer-choice-1").classList.add('disabled');
-            document.getElementById("computer-choice-2").classList.add('disabled');
-            document.getElementById("computer-choice-3").classList.add('disabled');
+            disableButtons();
 
             /*Fazer o botão de jogar novamente aparecer*/
-            document.getElementById("jogar-novamente").style.display = "block";
+            blockPlayAgain();
 
             /*Fazer o botão desistir desaparecer*/
-            document.getElementById("desistir").style.display = "none";
+            giveUpDisappear();
         }
     }
 }
@@ -209,7 +184,19 @@ function play(choice)
 function giveUp()
 {
     document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+    
     /* desabilitar os botões */
+    disableButtons();
+
+    /*Fazer o botão de jogar novamente aparecer*/
+    blockPlayAgain();
+
+    /*Fazer o botão desistir desaparecer*/
+    giveUpDisappear();
+}
+
+function disableButtons()
+{    
     document.getElementById("player-choice-1").classList.add('disabled');
     document.getElementById("player-choice-2").classList.add('disabled');
     document.getElementById("player-choice-3").classList.add('disabled');
@@ -217,10 +204,25 @@ function giveUp()
     document.getElementById("computer-choice-1").classList.add('disabled');
     document.getElementById("computer-choice-2").classList.add('disabled');
     document.getElementById("computer-choice-3").classList.add('disabled');
+}
 
-    /*Fazer o botão de jogar novamente aparecer*/
+function blockPlayAgain()
+{
     document.getElementById("jogar-novamente").style.display = "block";
+}
 
-    /*Fazer o botão desistir desaparecer*/
+function giveUpDisappear()
+{
     document.getElementById("desistir").style.display = "none";
+}
+
+function removeSelected()
+{
+    document.getElementById("player-choice-1").classList.remove('selected');
+    document.getElementById("player-choice-2").classList.remove('selected');
+    document.getElementById("player-choice-3").classList.remove('selected');
+
+    document.getElementById("computer-choice-1").classList.remove('selected');
+    document.getElementById("computer-choice-2").classList.remove('selected');
+    document.getElementById("computer-choice-3").classList.remove('selected');
 }
