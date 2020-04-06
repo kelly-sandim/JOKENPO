@@ -205,3 +205,22 @@ function play(choice)
         }
     }
 }
+
+function giveUp()
+{
+    document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+    /* desabilitar os botões */
+    document.getElementById("player-choice-1").classList.add('disabled');
+    document.getElementById("player-choice-2").classList.add('disabled');
+    document.getElementById("player-choice-3").classList.add('disabled');
+
+    document.getElementById("computer-choice-1").classList.add('disabled');
+    document.getElementById("computer-choice-2").classList.add('disabled');
+    document.getElementById("computer-choice-3").classList.add('disabled');
+
+    /*Fazer o botão de jogar novamente aparecer*/
+    document.getElementById("jogar-novamente").style.display = "block";
+
+    /*Fazer o botão desistir desaparecer*/
+    document.getElementById("desistir").style.display = "none";
+}
