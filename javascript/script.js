@@ -23,6 +23,8 @@ function play(choice)
     
     computerChoice = Math.floor((Math.random() *(3 - 1 + 1)) + 1);
 
+    /*Fazer o botão de desistir aparecer*/
+    document.getElementById("desistir").style.display = "block";
     /*
     1 - Pedra
     2 - Papel
@@ -112,10 +114,11 @@ function play(choice)
     document.getElementById('player-points').innerHTML = playerPoints;
     document.getElementById('computer-points').innerHTML = computerPoints;
 
+    /*IMPLEMENTA AS REGRAS*/
     gameType = localStorage.getItem("gameType");
-    console.log(gameType);
+    console.log(gameType);   
     
-    if(gameType === "1")
+    if(gameType === "1") //Melhor de 3
     {        
         if(playerPoints === 2 || computerPoints === 2)
         {            
@@ -138,10 +141,13 @@ function play(choice)
 
             /*Fazer o botão de jogar novamente aparecer*/
             document.getElementById("jogar-novamente").style.display = "block";
+
+            /*Fazer o botão desistir desaparecer*/
+            document.getElementById("desistir").style.display = "none";
         }
     }
 
-    else if(gameType === "2")
+    else if(gameType === "2") //Melhor de 5
     {
         if(playerPoints === 3 || computerPoints === 3)
         {            
@@ -164,10 +170,13 @@ function play(choice)
 
             /*Fazer o botão de jogar novamente aparecer*/
             document.getElementById("jogar-novamente").style.display = "block";
+
+            /*Fazer o botão desistir desaparecer*/
+            document.getElementById("desistir").style.display = "none";
         }
     }
 
-    else if(gameType === "3")
+    else if(gameType === "3") //Melhor de 7
     {
         if(playerPoints === 4 || computerPoints === 4)
         {            
@@ -190,6 +199,9 @@ function play(choice)
 
             /*Fazer o botão de jogar novamente aparecer*/
             document.getElementById("jogar-novamente").style.display = "block";
+
+            /*Fazer o botão desistir desaparecer*/
+            document.getElementById("desistir").style.display = "none";
         }
     }
 }

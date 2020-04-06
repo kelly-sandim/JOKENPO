@@ -154,6 +154,7 @@ ul#player-choice li a img, ul#computer-choice li a img
   transform: translate(-50%, -50%);
 }
 
-a#jogar-novamente {
+a#jogar-novamente, a#desistir {
     display: none;
+    text-align: center;
 }
