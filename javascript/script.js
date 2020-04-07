@@ -15,7 +15,12 @@ function tipoJogo(choice)
         3 - Melhor de 7
     */
    localStorage.setItem("gameType", choice);
-   localStorage.setItem("id", "1");
+   var id = parseInt(localStorage.getItem("id"));
+   if(id == null)
+   {
+        localStorage.setItem("id", "1");
+   }
+   
 }
 
 function play(choice)
@@ -123,8 +128,9 @@ function play(choice)
 
                 var currentdate = new Date(); 
                 var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = localStorage.getItem('historico');
-                obj = obj + "," + [id, datetime , "você", playerPoints + "x" +computerPoints, "não"];
+                var obj = [];
+                obj.push(localStorage.getItem('historico'));
+                obj.push([id, datetime , "você", playerPoints + "x" +computerPoints, "não"]);
                 console.log(obj);
 
                 localStorage.setItem('historico', JSON.stringify(obj));
@@ -140,8 +146,9 @@ function play(choice)
 
                 var currentdate = new Date(); 
                 var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = localStorage.getItem('historico');
-                obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "não"];
+                var obj = [];
+                obj.push(localStorage.getItem('historico'));
+                obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "não"]);
                 console.log(obj);
 
                 localStorage.setItem('historico', JSON.stringify(obj));
@@ -172,8 +179,9 @@ function play(choice)
 
                 var currentdate = new Date(); 
                 var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = localStorage.getItem('historico');
-                obj = obj + "," + [id, datetime , "você", playerPoints + "x" +computerPoints, "não"];
+                var obj = [];
+                obj.push(localStorage.getItem('historico'));
+                obj.push([id, datetime , "você", playerPoints + "x" +computerPoints, "não"]);
                 console.log(obj);
 
                 localStorage.setItem('historico', JSON.stringify(obj));
@@ -189,8 +197,9 @@ function play(choice)
 
                 var currentdate = new Date(); 
                 var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = localStorage.getItem('historico');
-                obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "não"];
+                var obj = [];
+                obj.push(localStorage.getItem('historico'));
+                obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "não"]);
                 console.log(obj);
 
                 localStorage.setItem('historico', JSON.stringify(obj));
@@ -221,8 +230,9 @@ function play(choice)
 
                 var currentdate = new Date(); 
                 var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = localStorage.getItem('historico');
-                obj = obj + "," + [id, datetime , "você", playerPoints + "x" +computerPoints, "não"];
+                var obj = [];
+                obj.push(localStorage.getItem('historico'));
+                obj.push([id, datetime , "você", playerPoints + "x" +computerPoints, "não"]);
                 console.log(obj);
 
                 localStorage.setItem('historico', JSON.stringify(obj));
@@ -238,12 +248,12 @@ function play(choice)
 
                 var currentdate = new Date(); 
                 var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = localStorage.getItem('historico');
-                obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "não"];
+                var obj = [];
+                obj.push(localStorage.getItem('historico'));
+                obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "não"]);
                 console.log(obj);
 
                 localStorage.setItem('historico', JSON.stringify(obj));
-
 
                 id++;
                 localStorage.setItem("id", id);
@@ -269,8 +279,9 @@ function giveUp()
     var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
 
-    var obj = localStorage.getItem('historico');
-    obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "sim"];
+    var obj = [];
+    obj.push(localStorage.getItem('historico'));
+    obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "sim"]);
     console.log(obj);
 
     localStorage.setItem('historico', JSON.stringify(obj));

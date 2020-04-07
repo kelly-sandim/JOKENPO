@@ -1,5 +1,5 @@
-var dataSet = [];
-dataSet.push(JSON.parse(localStorage.getItem('historico')));
+var dataSet = JSON.parse(localStorage.getItem('historico'))
+
 console.log(dataSet);
 
 $(document).ready(function() {    
