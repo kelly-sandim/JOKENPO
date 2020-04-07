@@ -4,7 +4,7 @@ var computerChoice = 0;
 var computerPoints = 0;
 var winner = "";
 var gameType = -1;
-
+var id = -1;
 
 
 function tipoJogo(choice)
@@ -15,6 +15,7 @@ function tipoJogo(choice)
         3 - Melhor de 7
     */
    localStorage.setItem("gameType", choice);
+   localStorage.setItem("id", "1");
 }
 
 function play(choice)
@@ -118,10 +119,35 @@ function play(choice)
             if(playerPoints === 2)
             {               
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+                id = parseInt(localStorage.getItem("id"));
+
+                var currentdate = new Date(); 
+                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+                var obj = localStorage.getItem('historico');
+                obj = obj + "," + [id, datetime , "você", playerPoints + "x" +computerPoints, "não"];
+                console.log(obj);
+
+                localStorage.setItem('historico', JSON.stringify(obj));
+
+                id++;
+                localStorage.setItem("id", id);
             }
             else
             {                
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+                id = parseInt(localStorage.getItem("id"));
+
+                var currentdate = new Date(); 
+                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+                var obj = localStorage.getItem('historico');
+                obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "não"];
+                console.log(obj);
+
+                localStorage.setItem('historico', JSON.stringify(obj));
+
+                id++;
+                localStorage.setItem("id", id);
             }
             /* desabilitar os botões */
             disableButtons();
@@ -141,10 +167,36 @@ function play(choice)
             if(playerPoints === 3)
             {
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+
+                id = parseInt(localStorage.getItem("id"));
+
+                var currentdate = new Date(); 
+                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+                var obj = localStorage.getItem('historico');
+                obj = obj + "," + [id, datetime , "você", playerPoints + "x" +computerPoints, "não"];
+                console.log(obj);
+
+                localStorage.setItem('historico', JSON.stringify(obj));
+
+                id++;
+                localStorage.setItem("id", id);
             }
             else
             {
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+                id = parseInt(localStorage.getItem("id"));
+
+                var currentdate = new Date(); 
+                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+                var obj = localStorage.getItem('historico');
+                obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "não"];
+                console.log(obj);
+
+                localStorage.setItem('historico', JSON.stringify(obj));
+
+                id++;
+                localStorage.setItem("id", id);
             }
             /* desabilitar os botões */
             disableButtons();
@@ -164,10 +216,37 @@ function play(choice)
             if(playerPoints === 4)
             {
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+
+                id = parseInt(localStorage.getItem("id"));
+
+                var currentdate = new Date(); 
+                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+                var obj = localStorage.getItem('historico');
+                obj = obj + "," + [id, datetime , "você", playerPoints + "x" +computerPoints, "não"];
+                console.log(obj);
+
+                localStorage.setItem('historico', JSON.stringify(obj));
+
+                id++;
+                localStorage.setItem("id", id);
             }
             else
             {
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+                id = parseInt(localStorage.getItem("id"));
+
+                var currentdate = new Date(); 
+                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+                var obj = localStorage.getItem('historico');
+                obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "não"];
+                console.log(obj);
+
+                localStorage.setItem('historico', JSON.stringify(obj));
+
+
+                id++;
+                localStorage.setItem("id", id);
             }
             /* desabilitar os botões */
             disableButtons();
@@ -184,6 +263,20 @@ function play(choice)
 function giveUp()
 {
     document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+    id = parseInt(localStorage.getItem("id"));
+
+    var currentdate = new Date(); 
+    var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+
+    var obj = localStorage.getItem('historico');
+    obj = obj + "," + [id, datetime , "computador", playerPoints + "x" +computerPoints, "sim"];
+    console.log(obj);
+
+    localStorage.setItem('historico', JSON.stringify(obj));
+
+    id++;
+    localStorage.setItem("id", id);
     
     /* desabilitar os botões */
     disableButtons();

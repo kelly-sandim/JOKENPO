@@ -1,10 +1,6 @@
 var dataSet = [];
- 
-function updateDataSet()
-{
-    
-}
-
+dataSet.push(JSON.parse(localStorage.getItem('historico')));
+console.log(dataSet);
 
 $(document).ready(function() {    
     $('#example').DataTable( {
@@ -13,7 +9,7 @@ $(document).ready(function() {
             { title: "Id" },
             { title: "Data da Partida" },
             { title: "Vencedor" },
-            { title: "Placar" },
+            { title: "Placar (Você x Computador)" },
             { title: "Houve desistência?" }            
         ]
     } );
