@@ -126,17 +126,9 @@ function play(choice)
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
                 id = parseInt(localStorage.getItem("id"));
 
-                var currentdate = new Date(); 
-                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = [];
-                obj.push(localStorage.getItem('historico'));
-                obj.push([id, datetime , "você", playerPoints + "x" +computerPoints, "não"]);
-                console.log(obj);
-
-                localStorage.setItem('historico', JSON.stringify(obj));
-
-                id++;
-                localStorage.setItem("id", id);
+                /*Atualize o histórico*/
+                updateHistoric(id, "você", playerPoints, computerPoints, "não");                
+                
             }
             else
             {                
@@ -144,17 +136,8 @@ function play(choice)
 
                 id = parseInt(localStorage.getItem("id"));
 
-                var currentdate = new Date(); 
-                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = [];
-                obj.push(localStorage.getItem('historico'));
-                obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "não"]);
-                console.log(obj);
-
-                localStorage.setItem('historico', JSON.stringify(obj));
-
-                id++;
-                localStorage.setItem("id", id);
+                /*Atualize o histórico*/
+                updateHistoric(id, "computador", playerPoints, computerPoints, "não");
             }
             /* desabilitar os botões */
             disableButtons();
@@ -177,17 +160,8 @@ function play(choice)
 
                 id = parseInt(localStorage.getItem("id"));
 
-                var currentdate = new Date(); 
-                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = [];
-                obj.push(localStorage.getItem('historico'));
-                obj.push([id, datetime , "você", playerPoints + "x" +computerPoints, "não"]);
-                console.log(obj);
-
-                localStorage.setItem('historico', JSON.stringify(obj));
-
-                id++;
-                localStorage.setItem("id", id);
+                /*Atualize o histórico*/
+                updateHistoric(id, "você", playerPoints, computerPoints, "não");                                 
             }
             else
             {
@@ -195,17 +169,8 @@ function play(choice)
 
                 id = parseInt(localStorage.getItem("id"));
 
-                var currentdate = new Date(); 
-                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = [];
-                obj.push(localStorage.getItem('historico'));
-                obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "não"]);
-                console.log(obj);
-
-                localStorage.setItem('historico', JSON.stringify(obj));
-
-                id++;
-                localStorage.setItem("id", id);
+                /*Atualize o histórico*/
+                updateHistoric(id, "computador", playerPoints, computerPoints, "não"); 
             }
             /* desabilitar os botões */
             disableButtons();
@@ -228,17 +193,8 @@ function play(choice)
 
                 id = parseInt(localStorage.getItem("id"));
 
-                var currentdate = new Date(); 
-                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = [];
-                obj.push(localStorage.getItem('historico'));
-                obj.push([id, datetime , "você", playerPoints + "x" +computerPoints, "não"]);
-                console.log(obj);
-
-                localStorage.setItem('historico', JSON.stringify(obj));
-
-                id++;
-                localStorage.setItem("id", id);
+                /*Atualize o histórico*/
+                updateHistoric(id, "você", playerPoints, computerPoints, "não"); 
             }
             else
             {
@@ -246,17 +202,8 @@ function play(choice)
 
                 id = parseInt(localStorage.getItem("id"));
 
-                var currentdate = new Date(); 
-                var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-                var obj = [];
-                obj.push(localStorage.getItem('historico'));
-                obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "não"]);
-                console.log(obj);
-
-                localStorage.setItem('historico', JSON.stringify(obj));
-
-                id++;
-                localStorage.setItem("id", id);
+                /*Atualize o histórico*/
+                updateHistoric(id, "computador", playerPoints, computerPoints, "não"); 
             }
             /* desabilitar os botões */
             disableButtons();
@@ -270,24 +217,42 @@ function play(choice)
     }
 }
 
+function updateHistoric(id, winner, playerPoints, computerPoints, desistencia)
+{
+    var currentdate = new Date(); 
+    var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
+
+    var getHistoric = JSON.parse(localStorage.getItem('historico'));
+    var obj;
+
+    if(getHistoric == null)
+    {
+        obj = [];        
+    }
+    
+    else
+    {
+        obj = getHistoric;
+    }
+                    
+    var aux = [id, datetime, winner, playerPoints + "x" +computerPoints, desistencia];                
+    var newArray = obj.slice();
+    newArray.push(aux);
+    localStorage.setItem('historico', JSON.stringify(newArray));
+
+    id++;
+    localStorage.setItem("id", id);
+}
+
+
 function giveUp()
 {
     document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
 
     id = parseInt(localStorage.getItem("id"));
 
-    var currentdate = new Date(); 
-    var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1) + "/" + currentdate.getFullYear();
-
-    var obj = [];
-    obj.push(localStorage.getItem('historico'));
-    obj.push([id, datetime , "computador", playerPoints + "x" +computerPoints, "sim"]);
-    console.log(obj);
-
-    localStorage.setItem('historico', JSON.stringify(obj));
-
-    id++;
-    localStorage.setItem("id", id);
+    /*Atualize o histórico*/
+    updateHistoric(id, "computador", playerPoints, computerPoints, "sim"); 
     
     /* desabilitar os botões */
     disableButtons();
