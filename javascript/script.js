@@ -16,7 +16,9 @@ function tipoJogo(choice)
     */
    localStorage.setItem("gameType", choice);
    var id = parseInt(localStorage.getItem("id"));
-   if(id == null)
+
+   console.log(id);
+   if(id == null || isNaN(id))
    {
         localStorage.setItem("id", "1");
    }
@@ -126,6 +128,8 @@ function play(choice)
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
                 id = parseInt(localStorage.getItem("id"));
 
+                console.log(id);
+
                 /*Atualize o histórico*/
                 updateHistoric(id, "você", playerPoints, computerPoints, "não");                
                 
@@ -135,6 +139,8 @@ function play(choice)
                 document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
 
                 id = parseInt(localStorage.getItem("id"));
+
+                console.log(id);
 
                 /*Atualize o histórico*/
                 updateHistoric(id, "computador", playerPoints, computerPoints, "não");

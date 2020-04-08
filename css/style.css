@@ -9,10 +9,18 @@
     font-weight: 400;
 }
 
+a#navbar-title {
+    font-size: 50px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+   font-size: 20px;
+}
+
 .jokenpo
 {
     width: 150px;
-    height: 150px;
+    height: 160px;
 }
 
 #navbar-title
@@ -39,25 +47,27 @@
 
 #player
 {
+    border: 15px solid white;
     background-color: #ff7675;
 }
 
 #computer
 {
+    border: 15px solid white;
     background-color: #74b9ff;
 }
 
 #versus
 {
-    height: 80px;
+    height: 150px;
     text-align: center;
-    width: 80px;
+    width: 150px;
 }
 
 .vs
 {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
 }
 
 #player-id, #computer-id
@@ -128,7 +138,7 @@ ul#player-choice li a.disabled, ul#computer-choice li a.disabled
 
 ul#player-choice li a img, ul#computer-choice li a img
 {
-    max-width: 100px;
+    max-width: 150px;
 }
 
 #messages
@@ -157,4 +167,11 @@ ul#player-choice li a img, ul#computer-choice li a img
 a#jogar-novamente, a#desistir {
     display: none;
     text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
 }
+
+a#melhor-3, a#melhor-5, a#melhor-7
+{
+    font-size: 20px;
+} 
