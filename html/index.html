@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="../css/style.css">    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <script src="https://kit.fontawesome.com/092b80762b.js" crossorigin="anonymous"></script>    
+    
+    <title>Home</title>    
+</head>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a id="navbar-title" class="navbar-brand h1 mb-0" href="./index.html">Jo-Ken-Po!</a> 
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav mr-auto"> 
+                    <li class="nav-item">
+                        <a href="./historico.html" onclick="updateDataSet()" class="nav-link">Acessar seu Histórico</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="conteudo">
+        <div id="index" class="text-center">
+            <img src="../assets/images/japones.png" alt="Velho japonês" class="velhinho col-12">
+            <h4 id="intro" class="text-white">Bem vindo ao jogo de Jo-Ken-Po! Por favor, escolha uma das três opções abaixo para começar!</h4>
+            <div class="buttons">
+                <a href="./jokenpo.html" onclick="tipoJogo(1)" id="melhor-3" role="button" class="btn btn-light font-weight-bold col-3">Melhor de 3</a>
+                <a href="./jokenpo.html" onclick="tipoJogo(2)" id="melhor-5" role="button" class="btn btn-light font-weight-bold col-3">Melhor de 5</a>
+                <a href="./jokenpo.html" onclick="tipoJogo(3)" id="melhor-7" role="button" class="btn btn-light font-weight-bold col-3">Melhor de 7</a>
+            </div>
+        </div>        
+    </main>
+    <script src="../javascript/script.js"></script>
+</body>
+</html>

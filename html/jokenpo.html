@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" media="screen" href="../css/style.css">    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/dataset.js"></script>
+
+    <title>Jo-Ken-Po!</title>
+</head>
+<body class="bg-dark">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a id="navbar-title" class="navbar-brand h1 mb-0" href="./index.html">Jo-Ken-Po!</a> 
+            <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="navbar-nav mr-auto"> 
+                    <li class="nav-item">
+                        <a href="./historico.html" onclick="updateDataSet()" class="nav-link">Acessar seu Histórico</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="main" class="ml-3 mr-3 mt-3 mb-3">     
+        <div id="messages" class="text-light">&nbsp;</div>    
+        <div id="score">
+            <div id="player">
+                <h2 id="player-id">Você</h2>
+                <span id="player-points">0</span>
+
+                <ul id="player-choice">
+                    <li><a id="player-choice-1" onclick="play(1)"><img class="jokenpo" src="../assets/images/pedra_.png" alt="Pedra"></a></li>
+                    <li><a id="player-choice-2" onclick="play(2)"><img class="jokenpo" src="../assets/images/papel_.png" alt="Papel"></a></li>
+                    <li><a id="player-choice-3" onclick="play(3)"><img class="jokenpo" src="../assets/images/tesoura_.png" alt="Tesoura"></a></li>
+                </ul>
+            </div>
+
+            <div id="versus">
+                <img class="vs" src="../assets/images/vs.png" alt="versus">
+            </div>
+
+            <div id="computer">
+                <h2 id="computer-id">Computador</h2>
+                <span id="computer-points">0</span>
+
+                <ul id="computer-choice">
+                    <li><a id="computer-choice-1"><img class="jokenpo" src="../assets/images/pedra_.png" alt="Pedra"></a></li>
+                    <li><a id="computer-choice-2"><img class="jokenpo" src="../assets/images/papel_.png" alt="Papel"></a></li>
+                    <li><a id="computer-choice-3"><img class="jokenpo" src="../assets/images/tesoura_.png" alt="Tesoura"></a></li>
+                </ul>
+            </div>            
+        </div>         
+        <div id="options">
+            <a href="#" id="desistir" onclick="giveUp()" role="button" class="btn-danger font-weight-bold col-12 mt-4 p-4">Desistir</a>
+            <a href="./index.html" id="jogar-novamente" role="button" class="btn-light font-weight-bold col-12 mt-4 p-4">Jogar novamente</a>
+        </div>      
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Zhi+Mang+Xing&display=swap');
+
+
+*
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+a#navbar-title {
+    font-size: 50px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+   font-size: 20px;
+}
+
+.jokenpo
+{
+    width: 150px;
+    height: 160px;
+}
+
+#navbar-title
+{
+    font-family: 'Zhi Mang Xing', cursive;
+}
+
+#score
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#player, #computer
+{
+    position: relative;
+    flex-grow: 1;
+    border-radius: 5px;
+    width: 200px;
+    padding: 20px;
+    color: #fff;
+}
+
+#player
+{
+    border: 15px solid white;
+    background-color: #ff7675;
+}
+
+#computer
+{
+    border: 15px solid white;
+    background-color: #74b9ff;
+}
+
+#versus
+{
+    height: 150px;
+    text-align: center;
+    width: 150px;
+}
+
+.vs
+{
+    width: 150px;
+    height: 150px;
+}
+
+#player-id, #computer-id
+{
+    margin: 0;
+    padding: 0;
+}
+
+#player-id
+{
+    text-align: left;
+}
+
+#computer-id
+{
+    text-align: right;
+}
+
+#player-points, #computer-points
+{
+    position: absolute;
+    top: 8px;
+    font-size: 32px;
+}
+
+#player-points
+{
+    right: 20px;
+}
+
+
+ul#player-choice, ul#computer-choice
+{
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul#player-choice li, ul#computer-choice li
+{
+    display: inline;    
+}
+
+ul#player-choice li a, ul#computer-choice li a
+{
+    opacity: 0.5;
+}
+
+ul#player-choice li a:hover, ul#player-choice li a.selected, ul#computer-choice li a.selected
+{
+    opacity: 1;
+}
+
+ul#player-choice li a:hover
+{
+    cursor: pointer;
+}
+
+ul#player-choice li a.disabled, ul#computer-choice li a.disabled
+{
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+
+ul#player-choice li a img, ul#computer-choice li a img
+{
+    max-width: 150px;
+}
+
+#messages
+{    
+    text-align: center;
+    font-size: 32px;
+    border-radius: 5px;    
+    padding: 20px;
+}
+
+.velhinho
+{
+    width: 250px;
+    height: 350px;
+}
+
+.conteudo
+{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a#jogar-novamente, a#desistir {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+a#melhor-3, a#melhor-5, a#melhor-7
+{
+    font-size: 20px;
+} 
