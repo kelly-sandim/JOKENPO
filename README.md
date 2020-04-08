@@ -17,4 +17,6 @@ Este jogo de Jokenpo foi feito utilizando HTML, CSS, Bootstrap, DataTables e Jav
 ### **Screenshots**
 ![Index](https://i.imgur.com/BOyu48u.png)
 ![Tela do Jogo](https://i.imgur.com/TMNhSzh.png)
+![Partida 1](https://i.imgur.com/aDfThCt.png)
+![Partida 2](https://i.imgur.com/7zi2xa8.png)
 ![Tela de Histórico](https://i.imgur.com/ijvPo4U.png)
