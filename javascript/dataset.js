@@ -1,14 +1,15 @@
-var dataSet = JSON.parse(localStorage.getItem('historico'))
+var dataSet = JSON.parse(localStorage.getItem('historico'));
 
 $(document).ready(function() {    
-    $('#example').DataTable( {
+    var table = $('#example').DataTable( {
         data: dataSet,
         columns: [
             { title: "Id" },
             { title: "Data da Partida" },
             { title: "Vencedor" },
             { title: "Placar (Você x Computador)" },
-            { title: "Houve desistência?" }            
+            { title: "Houve desistência?" },
+            { title: "Deletar partida?"}            
         ],
         order: [[ 0, "asc" ]],
         pageLength: 10,
@@ -32,5 +33,16 @@ $(document).ready(function() {
         buttons: [
             'csv', 'excel', 'pdf', 'print'
         ]
+    } );
+    
+    $('#example tbody').on( 'click', 'button', function () {
+        var data = table.row( $(this).parents('tr') ).data();        
+        //data[0] contém o id, então seria id-1
+        var newArrayData = JSON.parse(localStorage.getItem('historico'));
+        var position = newArrayData.indexOf(data[0], 0);        
+        newArrayData.splice(position, 1);
+        localStorage.setItem('historico', JSON.stringify(newArrayData));
+
+        document.location.reload(true);
     } );
 } );

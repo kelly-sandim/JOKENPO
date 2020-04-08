@@ -394,7 +394,7 @@ function updateHistoric(id, winner, playerPoints, computerPoints, desistencia)
         obj = getHistoric;
     }
                     
-    var aux = [id, datetime, winner, playerPoints + "x" +computerPoints, desistencia];                
+    var aux = [id, datetime, winner, playerPoints + "x" +computerPoints, desistencia, "<button class='btn btn-danger'>Deletar</button>"];                
     var newArray = obj.slice();
     newArray.push(aux);
     localStorage.setItem('historico', JSON.stringify(newArray));
