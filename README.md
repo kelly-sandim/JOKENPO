@@ -14,3 +14,7 @@ Este jogo de Jokenpo foi feito utilizando HTML, CSS, Bootstrap, DataTables e Jav
 - Uma versão jogável e acessível em qualquer lugar, sem precisar baixar esse repositório nem nada, está disponível em https://codepen.io/kelly-sandim/project/full/XGmbvd
 - Infelizmente, por conta do meu trabalho, eu vou ficar devendo a parte de adicionar favoritos e de apagar partidas
 
+### **Screenshots**
+![Index](https://i.imgur.com/BOyu48u.png)
+![Tela do Jogo](https://i.imgur.com/TMNhSzh.png)
+![Tela de Histórico](https://i.imgur.com/ijvPo4U.png)
