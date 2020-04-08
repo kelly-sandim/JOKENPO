@@ -5,7 +5,7 @@ var computerPoints = 0;
 var winner = "";
 var gameType = -1;
 var id = -1;
-
+var matchQuantity = 0;
 
 function tipoJogo(choice)
 {
@@ -43,18 +43,21 @@ function play(choice)
     if((playerChoice == 1) && (computerChoice == 1))
     {
         winner = "empate";
+        matchQuantity ++;
     } 
 
     else if((playerChoice == 1) && (computerChoice == 2))
     {
         winner = "computador";
         computerPoints++;
+        matchQuantity ++;
     } 
 
     else if ((playerChoice == 1) && (computerChoice == 3))
     {
         winner = "jogador";
         playerPoints++;
+        matchQuantity ++;
     } 
     
     //CASOS PAPEL
@@ -62,17 +65,20 @@ function play(choice)
     {
         winner = "jogador";
         playerPoints++;
+        matchQuantity ++;
     } 
 
     else if((playerChoice == 2) && (computerChoice == 2))
     {
         winner = "empate";
+        matchQuantity ++;
     } 
 
     else if ((playerChoice == 2) && (computerChoice == 3))
     {
         winner = "computador";
         computerPoints++;
+        matchQuantity ++;
     }
 
     //CASOS TESOURA
@@ -80,17 +86,20 @@ function play(choice)
     {
         winner = "computador";
         computerPoints++;
+        matchQuantity ++;
     } 
 
     else if((playerChoice == 3) && (computerChoice == 2))
     {
         winner = "jogador";
         playerPoints++;
+        matchQuantity ++;
     } 
 
     else if ((playerChoice == 3) && (computerChoice == 3))
     {
         winner = "empate";
+        matchQuantity ++;
     }
 
     removeSelected();
@@ -121,7 +130,7 @@ function play(choice)
     
     if(gameType === "1") //Melhor de 3
     {        
-        if(playerPoints === 2 || computerPoints === 2)
+        if((playerPoints === 2 || computerPoints === 2) && matchQuantity < 3)
         {            
             if(playerPoints === 2)
             {               
@@ -154,11 +163,59 @@ function play(choice)
             /*Fazer o botão desistir desaparecer*/
             giveUpDisappear();
         }
+
+        else
+        {
+            if(matchQuantity >= 3)
+            {
+                if(playerPoints > computerPoints)
+                {
+                    document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+                    id = parseInt(localStorage.getItem("id"));
+
+                    console.log(id);
+
+                    /*Atualize o histórico*/
+                    updateHistoric(id, "você", playerPoints, computerPoints, "não");
+
+                    /* desabilitar os botões */
+                    disableButtons();
+
+                    /*Fazer o botão de jogar novamente aparecer*/
+                    blockPlayAgain();
+
+                    /*Fazer o botão desistir desaparecer*/
+                    giveUpDisappear();
+
+                }
+                else if(computerPoints > playerPoints)
+                {
+                    document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+                    id = parseInt(localStorage.getItem("id"));
+
+                    console.log(id);
+
+                    /*Atualize o histórico*/
+                    updateHistoric(id, "computador", playerPoints, computerPoints, "não");
+
+                    /* desabilitar os botões */
+                    disableButtons();
+
+                    /*Fazer o botão de jogar novamente aparecer*/
+                    blockPlayAgain();
+
+                    /*Fazer o botão desistir desaparecer*/
+                    giveUpDisappear();
+
+                }
+            }
+        }
     }
 
     else if(gameType === "2") //Melhor de 5
     {
-        if(playerPoints === 3 || computerPoints === 3)
+        if((playerPoints === 3 || computerPoints === 3) && matchQuantity < 5)
         {            
             if(playerPoints === 3)
             {
@@ -187,11 +244,59 @@ function play(choice)
             /*Fazer o botão desistir desaparecer*/
             giveUpDisappear();
         }
+
+        else
+        {
+            if(matchQuantity >= 5)
+            {
+                if(playerPoints > computerPoints)
+                {
+                    document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+                    id = parseInt(localStorage.getItem("id"));
+
+                    console.log(id);
+
+                    /*Atualize o histórico*/
+                    updateHistoric(id, "você", playerPoints, computerPoints, "não");
+
+                    /* desabilitar os botões */
+                    disableButtons();
+
+                    /*Fazer o botão de jogar novamente aparecer*/
+                    blockPlayAgain();
+
+                    /*Fazer o botão desistir desaparecer*/
+                    giveUpDisappear();
+
+                }
+                else if(computerPoints > playerPoints)
+                {
+                    document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+                    id = parseInt(localStorage.getItem("id"));
+
+                    console.log(id);
+
+                    /*Atualize o histórico*/
+                    updateHistoric(id, "computador", playerPoints, computerPoints, "não");
+
+                    /* desabilitar os botões */
+                    disableButtons();
+
+                    /*Fazer o botão de jogar novamente aparecer*/
+                    blockPlayAgain();
+
+                    /*Fazer o botão desistir desaparecer*/
+                    giveUpDisappear();
+
+                }
+            }
+        }
     }
 
     else if(gameType === "3") //Melhor de 7
     {
-        if(playerPoints === 4 || computerPoints === 4)
+        if((playerPoints === 4 || computerPoints === 4) && matchQuantity < 7)
         {            
             if(playerPoints === 4)
             {
@@ -220,7 +325,55 @@ function play(choice)
             /*Fazer o botão desistir desaparecer*/
             giveUpDisappear();
         }
-    }
+
+        else
+        {
+            if(matchQuantity >= 7)
+            {
+                if(playerPoints > computerPoints)
+                {
+                    document.getElementById('messages').innerHTML = 'Partida Encerrada! Você ganhou!';
+                    id = parseInt(localStorage.getItem("id"));
+
+                    console.log(id);
+
+                    /*Atualize o histórico*/
+                    updateHistoric(id, "você", playerPoints, computerPoints, "não");
+
+                    /* desabilitar os botões */
+                    disableButtons();
+
+                    /*Fazer o botão de jogar novamente aparecer*/
+                    blockPlayAgain();
+
+                    /*Fazer o botão desistir desaparecer*/
+                    giveUpDisappear();
+
+                }
+                else if(computerPoints > playerPoints)
+                {
+                    document.getElementById('messages').innerHTML = 'Partida Encerrada! Computador ganhou!';
+
+                    id = parseInt(localStorage.getItem("id"));
+
+                    console.log(id);
+
+                    /*Atualize o histórico*/
+                    updateHistoric(id, "computador", playerPoints, computerPoints, "não");
+
+                    /* desabilitar os botões */
+                    disableButtons();
+
+                    /*Fazer o botão de jogar novamente aparecer*/
+                    blockPlayAgain();
+
+                    /*Fazer o botão desistir desaparecer*/
+                    giveUpDisappear();
+
+                }
+            }
+        }
+    }    
 }
 
 function updateHistoric(id, winner, playerPoints, computerPoints, desistencia)
